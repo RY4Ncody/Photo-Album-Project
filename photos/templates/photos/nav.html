@@ -74,8 +74,10 @@
         }
     }
     .logoutButton{
-        position: relative;
-        top:60%;
+        position: absolute;
+        bottom:2%;
+        width:90%;
+        margin:0 5%;
     }
     .offcanvas-header h4{
         letter-spacing:1.5px;
@@ -156,17 +158,21 @@
                         <div class='profile-detail'>
                             {% if user.username == 'Ryan' %}
                             <img src='https://wallpaperaccess.com/full/5506198.jpg' class='profileImg'/>
-                            {% else %}
+                            {% elif user.username == 'Mary' %} 
                             <img src='https://i.pinimg.com/originals/92/4a/42/924a425e9715da07b2b6338aed01475f.jpg' class='profileImg'/>
+                            {% else %}
+                            <img src="https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_1280.png" class='profileImg'/>
                             {% endif %}
                          <b> {{user.username}}</b>
                           
                         </div>
-                        <button class='btn btn-light btn-block logoutButton' type='button' onclick="location.href = 'logout/';"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-box-arrow-right" viewBox="0 0 16 16">
+                       
+                        <button class='btn btn-dark btn-block logoutButton' type='button' onclick="location.href = 'logout/';"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-box-arrow-right" viewBox="0 0 16 16">
                             <path fill-rule="evenodd" d="M10 12.5a.5.5 0 0 1-.5.5h-8a.5.5 0 0 1-.5-.5v-9a.5.5 0 0 1 .5-.5h8a.5.5 0 0 1 .5.5v2a.5.5 0 0 0 1 0v-2A1.5 1.5 0 0 0 9.5 2h-8A1.5 1.5 0 0 0 0 3.5v9A1.5 1.5 0 0 0 1.5 14h8a1.5 1.5 0 0 0 1.5-1.5v-2a.5.5 0 0 0-1 0v2z"/>
                             <path fill-rule="evenodd" d="M15.854 8.354a.5.5 0 0 0 0-.708l-3-3a.5.5 0 0 0-.708.708L14.293 7.5H5.5a.5.5 0 0 0 0 1h8.793l-2.147 2.146a.5.5 0 0 0 .708.708l3-3z"/>
-                          </svg>&emsp;Logout
+                          </svg>&emsp;<span class='font-weight-bold'>Logout</span>
                         </button>
+                    
                     </div>
                 </div>
                 {% else %}
